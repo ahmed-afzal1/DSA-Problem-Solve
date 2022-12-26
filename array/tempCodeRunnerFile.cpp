@@ -1,6 +1,3 @@
-int findMinDiff(vector<int> arr,int student){
-//     sort(arr.begin(),arr.end());
-//     for(auto value:arr){
-//         cout<<value<<" ";
-//     }
-// }
+    // for(auto it:mp){
+    //     cout<<it.first<<" "<<it.second<<endl;
+    // }
