@@ -23,8 +23,9 @@ int main(){
             arr[j+1] = arr[j];
             j--;
         }
-        // arr[j+1] = current;
-    }
+        arr[j+1] = current;
+        cout<<arr[j+1]<<" aa"<<endl;
+    
 
 
     for(int i=0; i<n; i++){
