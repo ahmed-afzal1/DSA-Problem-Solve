@@ -22,13 +22,11 @@ int main(){
     }
     int k;
     cin>>k;
-    k%=n;
-
-    reverse(nums.begin(),nums.end()-k);
-
-    reverse(nums.end()-k,nums.end());
 
     reverse(nums.begin(),nums.end());
+    reverse(nums.begin(), nums.begin()+k);
+    reverse(nums.begin()+k, nums.end());
+
 
     for(auto it:nums){
         cout<<it<<" ";
