@@ -23,16 +23,23 @@ int main(){
 
     int n;
     cin>>n;
-    vector<int> prices;
+    vector<int> nums;
 
     for(int i=0; i<n; i++){
         int x;
         cin>>x;
-        prices.push_back(x);
+        nums.push_back(x);
     }
+    int target;
+    cin>>target;
 
-    cout<<maxProfit(prices);
-
+    for(int i=0; i<n; i++){
+        for(int j= i+1; j<n; j++){
+            if(nums[i] + nums[j] == target){
+                cout<<i<<" "<<j;
+            }
+        }
+    }
 
     return 0;
 }
