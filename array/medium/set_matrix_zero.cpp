@@ -21,27 +21,39 @@ int main(){
         matrix.push_back(temp);
     }
 
-    // vector<vector<int>> result;
-    // vector<int> resultTemp;
+    int rows = matrix.size(), cols = matrix[0].size();
+    vector<pair<int,int>> mp;
+    for(int i=0;i<rows;i++)
+    {
+        for(int j=0;j<cols;j++){
+            if(matrix[i][j]==0) mp.push_back(make_pair(i,j));
+        }
+    }
 
-    for(int i=0; i<m; i++){
-        for(int j=0; j<n; j++){
-            if(matrix[i][j] == 0){
-                // for(int k=0; k<n; k++){
-                //     matrix[i][k] = 0;
-                // }
-                
-            }
+    for(auto it:mp){
+        int j=0;
+        while (j<cols)
+        {
+            matrix[it.first][j]=0;
+            j++;
+        }
+
+        j=0;
+        while (j<rows)
+        {
+            matrix[j][it.second]=0;
+            j++;
+        }
+    }
+
+    for(int i=0;i<rows;i++)
+    {
+        for(int j=0;j<cols;j++){
             cout<<matrix[i][j]<<" ";
         }
         cout<<endl;
     }
 
-    // for(int i=0; i<m; i++){
-    //     for(int j=0; j<n; j++){
-    //         cout<<result[i][j]<<" ";
-    //     }
-    // }
     cout<<endl;
     
 
