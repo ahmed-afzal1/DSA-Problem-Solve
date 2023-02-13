@@ -4,13 +4,6 @@ using namespace std;
 int findPeakElement(vector<int>& nums) {    
     int n = nums.size();
 
-    // int low = 0;
-    // int high = n-1;
-
-    // while(low<=high){
-    //     int mid = (low+high)/2;
-    // }
-
     int peak = 0;
     for(int i=1; i<n; i++){
         if(nums[i]>nums[i-1]){
