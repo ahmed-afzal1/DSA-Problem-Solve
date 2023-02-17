@@ -1,16 +1,12 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int singleNonDuplicate(vector<int>& nums) {
-    map<int,int> mp;
-    
+vector<int> runningSum(vector<int>& nums) {
+    vector<int> result;
+    int sum = 0;
     for(int i=0; i<nums.size(); i++){
-        mp[nums[i]] ++;
-    }
-
-    int result = INT_MIN;
-    for(auto it:mp){
-        if(it.second == 1) result = it.first;
+        sum +=nums[i];
+        result.push_back(sum);
     }
 
     return result;
@@ -31,16 +27,11 @@ int main(){
         cin>>x;
         nums.push_back(x);
     }
-  
-    cout<<singleNonDuplicate(nums);
 
-    cout<<endl;
-
-    int result = 0;
-    for(int i=0;i<n;i++){
-        result = result^nums[i];
+    vector<int> result = runningSum(nums);
+    for(auto it:result){
+        cout<<it<<" ";
     }
-    cout<<result;
 
     return 0;
 }
