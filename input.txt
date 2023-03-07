@@ -1,2 +1,4 @@
-5
-abc car ada racecar cool
+2
+2
+ab c
+a bc
