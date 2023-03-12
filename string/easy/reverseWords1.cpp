@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+string largestOddNumber(string num) {
+	for(int i = num.length() - 1; i >= 0; --i)
+		if(int(num[i]) % 2)
+			return num.substr(0, i + 1);
+
+	return "";
+}
+
+int main(){
+    #ifndef ONLINE_JUDGE
+        freopen("../../input.txt","r",stdin);
+        freopen("../../output.txt","w",stdout);
+    #endif
+
+    string num;
+    cin>>num;
+
+    cout<<largestOddNumber(num);
+
+    return 0;
+}
