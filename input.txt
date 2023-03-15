@@ -1,2 +1,2 @@
-3
-abaa abc abca
+abcde
+cdeab
