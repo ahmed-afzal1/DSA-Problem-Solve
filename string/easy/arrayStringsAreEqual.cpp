@@ -1,23 +1,20 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-bool arrayStringsAreEqual(vector<string>& word1, vector<string>& word2) {
-    string firstConcate = "";
-    string secondConcate = "";
+int countPairs(vector<int>& nums, int k) {
+    int result = 0;
 
-    for(auto it:word1){
-        firstConcate += it;
+    for(int i=0; i<nums.size(); i++){
+        for(int j= i+1; j<nums.size(); j++){
+            if(nums[i] == nums[j]){
+                int mul = i*j;
+                if(mul%k == 0){
+                    result++;
+                }
+            }
+        }
     }
-
-    for(auto it:word2){
-        secondConcate += it;
-    }
-
-    if(firstConcate == secondConcate){
-        return true;
-    }
-
-    return false;
+    return result;
 }
 
 int main(){
@@ -26,25 +23,20 @@ int main(){
         freopen("../../output.txt","w",stdout);
     #endif
 
-    int n,m;
-    cin>>n>>m;
+    int n;
+    cin>>n;
 
-    vector<string> word1;
+    vector<int> nums;
     for(int i=0; i<n; i++){
-        string x;
+        int x;
         cin>>x;
-        word1.push_back(x);
+        nums.push_back(x);
     }
 
-    vector<string> word2;
-    for(int i=0; i<n; i++){
-        string x;
-        cin>>x;
-        word2.push_back(x);
-    }
+    int k;
+    cin>>k;
 
-
-    cout<<arrayStringsAreEqual(word1,word2);
+    cout<<countPairs(nums,k);
 
     return 0;
 }
