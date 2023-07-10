@@ -21,12 +21,20 @@ int main(){
     //     cout<<"Greatest number of elements :"<<*p3<<endl;
     // }
 
-    int *ptr;
-    ptr = (int *)malloc(5*sizeof(int));
+    // int *ptr;
+    // ptr = (int *)malloc(5*sizeof(int));
 
-    if(ptr == NULL){
-        cout<<"Memory not allocated";
-    }else{
-        cout<<"Memory allocated";
-    }
+    // if(ptr == NULL){
+    //     cout<<"Memory not allocated";
+    // }else{
+    //     cout<<"Memory allocated";
+    // }
+
+    string food = "Pizza";
+
+    string* ptr = &food; 
+    cout<<*ptr<<endl;
+    *ptr = "Burgur";
+    cout<<*ptr<<endl;
+    cout<<food;
 }

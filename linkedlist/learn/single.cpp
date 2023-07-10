@@ -1,4 +1,5 @@
-#include<iostream>
+#include<bits/stdc++.h>
+
 using namespace std;
 
 class node{
@@ -14,28 +15,28 @@ class node{
 
 void insertAtTail(node* &head, int val){
     node* n = new node(val);
-
     if(head == NULL){
-        head = n;
+        head=n;
         return;
     }
 
     node* temp = head;
-    while (temp->next != NULL)
-    {
+    while(temp->next != NULL){
         temp = temp->next;
     }
+
     temp->next = n;
 }
 
 void display(node* head){
-    node* temp = head;
+    node* temp= head;
     while (temp != NULL)
     {
-        cout << temp->data << " ";
+        cout<<temp->data<<"->";
         temp = temp->next;
     }
-    cout << endl;
+
+    cout<<"NULL"<<endl;
     
 }
 
